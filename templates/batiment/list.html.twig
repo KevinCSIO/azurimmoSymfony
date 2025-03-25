@@ -9,8 +9,14 @@
     </style>
 
     <div class="example-wrapper">
-        LISTE DES BATIMENTS</br>
+        Liste des bâtiments</br>
         <table border="1">
+            <th>
+                Adresse
+            </th>
+            <th>
+                Ville
+            </th>
             {% for b in batiments %}
                 <tr>
                 <td>{{ b.adresse }}</a></td>
