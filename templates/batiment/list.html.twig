@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BatimentController!{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+
+    <div class="example-wrapper">
+        LISTE DES BATIMENTS</br>
+        <table border="1">
+            {% for b in batiments %}
+                <tr>
+                <td>{{ b.adresse }}</a></td>
+                <td>{{ b.ville}}</td>
+            {% else %}
+                <tr>
+                    <td>Aucun batiment n'a été trouvé.</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
