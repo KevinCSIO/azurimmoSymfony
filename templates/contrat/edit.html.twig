@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Contrat{% endblock %}
+{% block title %}Modifier le contrat{% endblock %}
 
 {% block body %}
-    <h1>Edit Contrat</h1>
+    <h1>Modifier le contrat</h1>
 
-    {{ include('contrat/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('contrat/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('app_contrat_index') }}">back to list</a>
+    <a href="{{ path('app_contrat_index') }}">Accueil</a>
 
     {{ include('contrat/_delete_form.html.twig') }}
 {% endblock %}
