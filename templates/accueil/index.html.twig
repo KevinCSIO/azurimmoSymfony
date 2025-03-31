@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <h1>Accueil</h1>
+    <ul>
+        <li><a href="{{ path('app_appartement_index') }}">Gestion des Appartements</a></li>
+        <li><a href="{{ path('app_batiment_list') }}">Gestion des Bâtiments</a></li>
+        <li><a href="{{ path('app_contrat_index') }}">Gestion des Contrats</a></li>
+    </ul>
+{% endblock %}
