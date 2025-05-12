@@ -1,3 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 body {
-    background-color: skyblue;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #e6f0fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
+
+.home-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.home-card {
+    background-color: #ffffff;
+    padding: 40px 60px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.home-card h1 {
+    margin-bottom: 30px;
+    color: #2c3e50;
+    font-size: 28px;
+}
+
+.home-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.home-card li {
+    margin: 15px 0;
+}
+
+.home-card a {
+    color: #007bff;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+}
+
+.home-card a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+.home-card a:hover {
+    color: #0056b3;
+}
+
+.home-card a:hover::after {
+    width: 100%;
+}
+
