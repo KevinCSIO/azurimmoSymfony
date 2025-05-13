@@ -9,18 +9,16 @@
         <table class="table">
             <thead>
             <tr>
-                <th>Id</th>
                 <th>Description</th>
-                <th>Numero</th>
+                <th>Numéro</th>
                 <th>Surface</th>
-                <th>Nbre_pieces</th>
+                <th>Nombre de pièces</th>
                 <th>Actions</th>
             </tr>
             </thead>
             <tbody>
             {% for appartement in appartements %}
                 <tr>
-                    <td>{{ appartement.id }}</td>
                     <td>{{ appartement.description }}</td>
                     <td>{{ appartement.numero }}</td>
                     <td>{{ appartement.surface }}</td>
