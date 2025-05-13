@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier le bâtiment{% endblock %}
+
+{% block body %}
+    <div class="form-card">
+        <h2>Modifier le bâtiment</h2>
+
+        {{ include('batiment/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    </div>
+{% endblock %}
+
