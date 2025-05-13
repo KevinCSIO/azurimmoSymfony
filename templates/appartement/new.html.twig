@@ -3,9 +3,9 @@
 {% block title %}Nouvel Appartement{% endblock %}
 
 {% block body %}
-    <h1>Création d'un nouvel appartement</h1>
+    <div class="form-card">
+        <h2>Création d'un nouvel appartement</h2>
 
-    {{ include('appartement/_form.html.twig') }}
-
-    <a href="{{ path('app_appartement_index') }}">Accueil</a>
+        {{ include('appartement/_form.html.twig') }}
+    </div>
 {% endblock %}
