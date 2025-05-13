@@ -3,10 +3,11 @@
 {% block title %}Liste des appartements{% endblock %}
 
 {% block body %}
-    <h1>Liste des appartements</h1>
+    <div class="table-wrapper">
+        <h1>Liste des appartements</h1>
 
-    <table class="table">
-        <thead>
+        <table class="table">
+            <thead>
             <tr>
                 <th>Id</th>
                 <th>Description</th>
@@ -15,27 +16,30 @@
                 <th>Nbre_pieces</th>
                 <th>Actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for appartement in appartements %}
-            <tr>
-                <td>{{ appartement.id }}</td>
-                <td>{{ appartement.description }}</td>
-                <td>{{ appartement.numero }}</td>
-                <td>{{ appartement.surface }}</td>
-                <td>{{ appartement.nbrePieces }}</td>
-                <td>
-                    <a href="{{ path('app_appartement_show', {'id': appartement.id}) }}">Afficher</a>
-                    <a href="{{ path('app_appartement_edit', {'id': appartement.id}) }}">Modifier</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">Pas d'appartements trouvés !</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for appartement in appartements %}
+                <tr>
+                    <td>{{ appartement.id }}</td>
+                    <td>{{ appartement.description }}</td>
+                    <td>{{ appartement.numero }}</td>
+                    <td>{{ appartement.surface }}</td>
+                    <td>{{ appartement.nbrePieces }}</td>
+                    <td>
+                        <a href="{{ path('app_appartement_show', {'id': appartement.id}) }}">Afficher</a>
+                        <a href="{{ path('app_appartement_edit', {'id': appartement.id}) }}">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">Pas d'appartements trouvés !</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('app_appartement_new') }}">Créer</a>
+        <div class="create-button-wrapper">
+            <a href="{{ path('app_appartement_new') }}" class="btn-create">Créer</a>
+        </div>
+    </div>
 {% endblock %}
