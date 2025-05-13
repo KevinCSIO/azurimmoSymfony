@@ -309,5 +309,73 @@ button.btn {
     align-items: center;
 }
 
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.info-message {
+    margin-bottom: 20px;
+    background-color: #e2f0ff;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.form-card label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.form-card input[type="email"],
+.form-card input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.account-msg {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.account-msg a {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.account-msg a:hover {
+    text-decoration: underline;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.checkbox-inline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap; /* <-- empêche le retour à la ligne */
+}
+
 
 
