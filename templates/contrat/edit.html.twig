@@ -3,11 +3,10 @@
 {% block title %}Modifier le contrat{% endblock %}
 
 {% block body %}
-    <h1>Modifier le contrat</h1>
+<div class="form-card">
+    <h2>Modifier le contrat</h2>
 
     {{ include('contrat/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('app_contrat_index') }}">Accueil</a>
-
-    {{ include('contrat/_delete_form.html.twig') }}
+</div>
 {% endblock %}

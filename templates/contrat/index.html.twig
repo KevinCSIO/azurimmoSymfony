@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contrat index{% endblock %}
+{% block title %}Liste des contrats{% endblock %}
 
 {% block body %}
+<div class="table-wrapper">
     <h1>Liste des contrats</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>DateEntree</th>
-                <th>DateSortie</th>
-                <th>MontantLoyer</th>
-                <th>MontantCharges</th>
+                <th>Date d'Entrée</th>
+                <th>Date de Sortie</th>
+                <th>Montant du Loyer</th>
+                <th>Montant des Charges</th>
                 <th>Statut</th>
                 <th>Actions</th>
             </tr>
@@ -20,7 +20,6 @@
         <tbody>
         {% for contrat in contrats %}
             <tr>
-                <td>{{ contrat.id }}</td>
                 <td>{{ contrat.dateEntree ? contrat.dateEntree|date('d/m/Y') : '' }}</td>
                 <td>{{ contrat.dateSortie ? contrat.dateSortie|date('d/m/Y') : '' }}</td>
                 <td>{{ contrat.montantLoyer }} €</td>
@@ -39,5 +38,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_contrat_new') }}">Nouveau</a>
+    <div class="button-group">
+        <a href="{{ path('app_accueil') }}" class="btn btn-primary">Accueil</a>
+        <a href="{{ path('app_contrat_new') }}" class="btn btn-primary">Créer</a>
+    </div>
+</div>
 {% endblock %}

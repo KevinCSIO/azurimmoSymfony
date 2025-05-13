@@ -3,40 +3,26 @@
 {% block title %}Contrat{% endblock %}
 
 {% block body %}
-    <h1>Contrat</h1>
+    <div class="card-detail">
+        <h1>Contrat</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ contrat.id }}</td>
-            </tr>
-            <tr>
-                <th>DateEntree</th>
-                <td>{{ contrat.dateEntree ? contrat.dateEntree|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>DateSortie</th>
-                <td>{{ contrat.dateSortie ? contrat.dateSortie|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>MontantLoyer</th>
-                <td>{{ contrat.montantLoyer }}</td>
-            </tr>
-            <tr>
-                <th>MontantCharges</th>
-                <td>{{ contrat.montantCharges }}</td>
-            </tr>
-            <tr>
-                <th>Statut</th>
-                <td>{{ contrat.statut }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <div class="info">
+            <p><strong>Date d'Entrée :</strong> {{ contrat.dateEntree|date('d/m/Y') }}</p>
+            <p><strong>Date de Sortie :</strong> {{ contrat.dateSortie|date('d/m/Y') }}</p>
+            <p><strong>Montant du Loyer :</strong> {{ contrat.montantLoyer }}</p>
+            <p><strong>Montant des Charges :</strong> {{ contrat.montantCharges }}</p>
+            <p><strong>Statut :</strong> {{ contrat.statut }}</p>
 
-    <a href="{{ path('app_contrat_index') }}">Accueil</a>
+        </div>
 
-    <a href="{{ path('app_contrat_edit', {'id': contrat.id}) }}">Modifier</a>
-
-    {{ include('contrat/_delete_form.html.twig') }}
+        <div class="actions">
+            <a href="{{ path('app_contrat_index') }}" class="btn btn-primary">Retour</a>
+            <a href="{{ path('app_contrat_edit', {'id': contrat.id}) }}" class="btn btn-primary">Modifier</a>
+            {{ include('contrat/_delete_form.html.twig') }}
+        </div>
+    </div>
 {% endblock %}
+
+
+
+
