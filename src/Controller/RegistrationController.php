@@ -27,12 +27,14 @@ class RegistrationController extends AbstractController
             // encode the plain password
             $user->setPassword($userPasswordHasher->hashPassword($user, $plainPassword));
 
+            $user->setRoles(['ROLE_LOCATAIRE']);
+
             $entityManager->persist($user);
             $entityManager->flush();
 
             // do anything else you need here, like send an email
 
-            return $this->redirectToRoute('app_appartement_index');
+            return $this->redirectToRoute('app_accueil');
         }
 
         return $this->render('registration/register.html.twig', [
