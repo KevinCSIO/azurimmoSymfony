@@ -13,7 +13,20 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body class="{% if app.request.attributes.get('_route') == 'app_accueil' %}body-centered{% endif %}">
+    {% set currentRoute = app.request.attributes.get('_route') %}
+
+    {% if currentRoute not in ['app_accueil', 'app_login', 'app_register'] %}
+        <nav class="main-navbar">
+            <ul class="main-navbar-links">
+                <li><a href="{{ path('app_appartement_index') }}">Appartements</a></li>
+                <li><a href="{{ path('app_batiment_index') }}">Bâtiments</a></li>
+                <li><a href="{{ path('app_contrat_index') }}">Contrats</a></li>
+                <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+            </ul>
+        </nav>
+    {% endif %}
+
+    {% block body %}{% endblock %}
     </body>
 </html>

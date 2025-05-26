@@ -11,6 +11,13 @@
                 <li><a href="{{ path('app_batiment_index') }}">Gestion des Bâtiments</a></li>
                 <li><a href="{{ path('app_contrat_index') }}">Gestion des Contrats</a></li>
             </ul>
+            <div class="auth-buttons">
+                {% if app.user %}
+                    <a href="{{ path('app_logout') }}" class="btn btn-primary">Déconnexion</a>
+                {% else %}
+                    <a href="{{ path('app_login') }}" class="btn btn-primary">Connexion</a>
+                {% endif %}
+            </div>
         </div>
     </div>
 {% endblock %}
