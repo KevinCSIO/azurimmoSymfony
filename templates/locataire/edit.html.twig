@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier le locataire{% endblock %}
+
+{% block body %}
+    <div class="form-card">
+        <h1>Modifier le locataire</h1>
+
+        {{ include('locataire/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+    </div>
+{% endblock %}
+
