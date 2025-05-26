@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Locataire{% endblock %}
+
+{% block body %}
+    <div class="form-card">
+        <h2>Création d'un nouveau locataire</h2>
+
+        {{ include('locataire/_form.html.twig') }}
+
+    </div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des locataires{% endblock %}
+
+{% block body %}
+<div class="table-wrapper">
+    <h1>Liste des locataires</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Date de Naissance</th>
+                <th>Lieu de Naissance</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for locataire in locataires %}
+            <tr>
+                <td>{{ locataire.nom }}</td>
+                <td>{{ locataire.prenom }}</td>
+                <td>{{ locataire.dateN ? locataire.dateN|date('d/m/Y') : '' }}</td>
+                <td>{{ locataire.lieuN }}</td>
+                <td>
+                    <a href="{{ path('app_locataire_show', {'id': locataire.id}) }}">Afficher</a>
+                    <a href="{{ path('app_locataire_edit', {'id': locataire.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Pas de locataires trouvés !</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="button-group">
+        <a href="{{ path('app_accueil') }}" class="btn btn-primary">Accueil</a>
+        <a href="{{ path('app_locataire_new') }}" class="btn btn-primary">Créer</a>
+    </div>
+</div>
+{% endblock %}
